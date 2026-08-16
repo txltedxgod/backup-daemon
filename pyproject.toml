@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backup-daemon"
+version = "1.0.0"
+description = "Automated encrypted database backup daemon with S3/MinIO upload and retention management"
+authors = [{ name = "txltedxgod", email = "seidoutakidzava@gmail.com" }]
+dependencies = [
+    "boto3>=1.34.0",
+    "cryptography>=41.0.7",
+    "click>=8.1.7",
+    "pyyaml>=6.0.1",
+    "schedule>=1.2.1"
+]
+readme = "README.md"
+requires-python = ">=3.10"
