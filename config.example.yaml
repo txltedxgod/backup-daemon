@@ -1,0 +1,25 @@
+schedule_time: "03:00"
+retention_days: 30
+# 32-byte hex key for AES-256-GCM
+encryption_key_hex: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+
+s3:
+  endpoint_url: "https://s3.amazonaws.com"
+  bucket: "my-production-backups"
+  access_key: "AKIAIOSFODNN7EXAMPLE"
+  secret_key: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+
+databases:
+  - name: "core_postgres"
+    type: "postgres"
+    host: "postgres-host"
+    port: 5432
+    user: "postgres"
+    password: "secret_db_password"
+    dbname: "app_production"
+    s3_prefix: "databases/postgres"
+
+  - name: "app_sqlite"
+    type: "sqlite"
+    path: "/data/app.db"
+    s3_prefix: "databases/sqlite"
